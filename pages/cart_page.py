@@ -20,3 +20,4 @@ class CartPage:
 
     def is_cart_badge_visible(self):
         return self.page.locator(self.cart_badge).is_visible()
+    

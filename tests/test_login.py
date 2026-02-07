@@ -1,5 +1,4 @@
 from playwright.sync_api import expect
-from pages.login_page import LoginPage
 
 def test_successful_login(login_page):
     login_page.open()

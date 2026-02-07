@@ -21,3 +21,6 @@ class CheckoutPage:
 
     def finish_checkout(self):
         self.page.click(self.finish_btn)
+
+    def order_success_message(self):
+        return self.page.get_by_text("Thank you for your order!")
