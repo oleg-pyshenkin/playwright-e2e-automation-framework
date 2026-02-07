@@ -12,5 +12,5 @@ def test_checkout_flow(login_page, cart_page, checkout_page):
     checkout_page.continue_checkout()
     checkout_page.finish_checkout()
 
-    expect(checkout_page.order_success_message()).to_be_visible()
+    assert checkout_page.get_success_message() == "Thank you for your order!"
 

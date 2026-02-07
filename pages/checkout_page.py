@@ -1,26 +1,29 @@
-class CheckoutPage:
+from pages.base_page import BasePage
+
+class CheckoutPage(BasePage):
     def __init__(self, page):
-        self.page = page
+        super().__init__(page)
         self.checkout_btn = "[data-test='checkout']"
         self.first_name_input = "[data-test='firstName']"
         self.last_name_input = "[data-test='lastName']"
         self.postal_code_input = "[data-test='postalCode']"
         self.continue_btn = "[data-test='continue']"
         self.finish_btn = "[data-test='finish']"
+        self.success_message = ".complete-header" 
 
     def start_checkout(self):
-        self.page.click(self.checkout_btn)
+        self.click(self.checkout_btn)
 
     def fill_customer_info(self, first_name_input, last_name_input, postal_code_input):
-        self.page.fill(self.first_name_input, first_name_input)
-        self.page.fill(self.last_name_input, last_name_input)
-        self.page.fill(self.postal_code_input, postal_code_input)
+        self.fill(self.first_name_input, first_name_input)
+        self.fill(self.last_name_input, last_name_input)
+        self.fill(self.postal_code_input, postal_code_input)
 
     def continue_checkout(self):
-        self.page.click(self.continue_btn)
+        self.click(self.continue_btn)   
 
     def finish_checkout(self):
-        self.page.click(self.finish_btn)
+        self.click(self.finish_btn)
 
-    def order_success_message(self):
-        return self.page.get_by_text("Thank you for your order!")
+    def get_success_message(self):
+        return self.get_text(self.success_message)
