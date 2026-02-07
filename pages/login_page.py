@@ -1,9 +1,6 @@
-
-
 class LoginPage():
     def __init__(self, page):
         self.page = page
-
 
         self.username_input = "#user-name"
         self.password_input = "#password"
