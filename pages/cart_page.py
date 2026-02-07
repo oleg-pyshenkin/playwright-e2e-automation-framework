@@ -1,3 +1,4 @@
+from playwright.sync_api import expect
 from pages.base_page import BasePage
 
 
@@ -11,6 +12,8 @@ class CartPage(BasePage):
 
     def add_backpack_to_cart(self):
         self.click(self.add_to_cart_backpack_btn)
+        remove_btn = self.page.locator(self.remove_backpack_btn)
+        expect(remove_btn).to_be_visible()
 
     def open_cart(self):
         self.click(self.cart_icon)
@@ -19,8 +22,11 @@ class CartPage(BasePage):
         self.click(self.remove_backpack_btn)
 
     def get_cart_count(self):
-        return self.get_text(self.cart_badge)
+        badge = self.page.locator(self.cart_badge)
+        if badge.is_visible():
+            return int(badge.inner_text())
+        return 0
 
     def is_cart_badge_visible(self):
-        return self.is_visible(self.cart_badge)
+        return self.get_cart_count() > 0
     
