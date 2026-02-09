@@ -3,30 +3,29 @@ from pages.base_page import BasePage
 
 
 class CartPage(BasePage):
+    ADD_BACKPACK_BTN = "[data-test='add-to-cart-sauce-labs-backpack']"
+    CART_ICON = ".shopping_cart_link"
+    REMOVE_BACKPACK_BTN = "[data-test='remove-sauce-labs-backpack']"
+    CART_BADGE = "[data-test='shopping_cart_badge']"
+
     def __init__(self, page):
         super().__init__(page)
-        self.add_to_cart_backpack_btn = "[data-test='add-to-cart-sauce-labs-backpack']"
-        self.cart_icon = ".shopping_cart_link"
-        self.remove_backpack_btn = "[data-test='remove-sauce-labs-backpack']"
-        self.cart_badge = "[data-test='shopping_cart_badge']"
 
     def add_backpack_to_cart(self):
-        self.click(self.add_to_cart_backpack_btn)
-        remove_btn = self.page.locator(self.remove_backpack_btn)
-        expect(remove_btn).to_be_visible()
+        self.click(self.ADD_BACKPACK_BTN)
+        expect(self.page.locator(self.REMOVE_BACKPACK_BTN)).to_be_visible()
 
     def open_cart(self):
-        self.click(self.cart_icon)
+        self.click(self.CART_ICON)
 
     def remove_backpack_from_cart(self):
-        self.click(self.remove_backpack_btn)
+        self.click(self.REMOVE_BACKPACK_BTN)
 
     def get_cart_count(self):
-        badge = self.page.locator(self.cart_badge)
-        if badge.is_visible():
-            return int(badge.inner_text())
-        return 0
+        badge = self.page.locator(self.CART_BADGE)
+        if badge.count() == 0:
+            return 0
+        return int(badge.inner_text())
 
     def is_cart_badge_visible(self):
         return self.get_cart_count() > 0
-    
