@@ -1,9 +1,10 @@
 from playwright.sync_api import expect
-from config.config import VALID_USER, VALID_PASSWORD
+from utils.test_data import TestData
+
 
 def test_checkout_flow(login_page, cart_page, checkout_page):
     login_page.open()
-    login_page.login(VALID_USER, VALID_PASSWORD)
+    login_page.login(TestData.VALID_USER, TestData.VALID_PASSWORD)
 
     cart_page.add_backpack_to_cart()
 
