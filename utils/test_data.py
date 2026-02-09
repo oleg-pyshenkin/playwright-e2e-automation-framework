@@ -1,9 +1,8 @@
-import requests
 from config.config import VALID_USER, VALID_PASSWORD
 
 class TestData:
-    USERNAME = VALID_USER
-    PASSWORD = VALID_PASSWORD
+    VALID_USER = "standard_user"
+    VALID_PASSWORD = "secret_sauce"
 
     FIRST_NAME = "Oleg"
     LAST_NAME = "QA"
@@ -11,8 +10,4 @@ class TestData:
 
     INVALID_PASSWORD = "wrong_password"
 
-    
-    def test_api_login():
-        url = "https://www.saucedemo.com"
-        response = requests.get(url)
-        assert response.status_code == 200
+

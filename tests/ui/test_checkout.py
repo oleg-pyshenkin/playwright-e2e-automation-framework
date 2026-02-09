@@ -1,7 +1,7 @@
-from playwright.sync_api import expect
 from utils.test_data import TestData
+import pytest
 
-
+@pytest.mark.ui
 def test_checkout_flow(login_page, cart_page, checkout_page):
     login_page.open()
     login_page.login(TestData.VALID_USER, TestData.VALID_PASSWORD)
