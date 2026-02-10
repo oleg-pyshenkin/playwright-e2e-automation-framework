@@ -53,7 +53,9 @@ This project demonstrates real-world automation skills including UI and API test
 
 ---
 
-### Install Dependencies
+### Running Tests
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
