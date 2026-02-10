@@ -53,7 +53,14 @@ This project demonstrates real-world automation skills including UI and API test
 
 ---
 
-## Running Tests
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+playwright install
+
+
+### Running Tests
 
 Run UI Tests Only
 pytest tests/ui
@@ -63,11 +70,3 @@ pytest tests/api
 
 Run Smoke Tests
 pytest tests/smoke
-
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-playwright install
-
