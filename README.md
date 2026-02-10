@@ -33,24 +33,6 @@ This project demonstrates real-world automation skills including UI and API test
 
 ---
 
-## Project Structure
-playwright-e2e-automation-framework/
-│
-├── pages/ # Page Objects containing locators and UI logic
-├── tests/
-│ ├── ui/ # UI test cases
-│ ├── api/ # API test cases
-│ └── smoke/ # Smoke tests
-├── utils/ # Helper functions and test data
-├── config/ # Environment configuration files
-├── conftest.py # Global fixtures for Pytest
-├── pytest.ini # Pytest configuration
-├── requirements.txt # Python dependencies
-└── README.md
-
-
----
-
 ## Test Scenarios Implemented
 
 ### UI Tests
@@ -73,22 +55,6 @@ playwright-e2e-automation-framework/
 
 ## Running Tests
 
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-playwright install
-
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-playwright install
-
-
-## Running Tests
-
 Run UI Tests Only
 pytest tests/ui
 
@@ -97,3 +63,11 @@ pytest tests/api
 
 Run Smoke Tests
 pytest tests/smoke
+
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+playwright install
+
