@@ -1,4 +1,7 @@
 from pages.base_page import BasePage
+from utils.config_loader import Config
+
+config = Config(env="dev")
 
 class CheckoutPage(BasePage):
     def __init__(self, page):

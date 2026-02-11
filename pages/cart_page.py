@@ -1,6 +1,8 @@
 from playwright.sync_api import expect
+from utils.config_loader import Config
 from pages.base_page import BasePage
 
+config = Config(env="dev")
 
 class CartPage(BasePage):
     ADD_BACKPACK_BTN = "[data-test='add-to-cart-sauce-labs-backpack']"
