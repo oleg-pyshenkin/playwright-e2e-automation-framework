@@ -1,11 +1,10 @@
 import pytest
 from playwright.sync_api import expect
-from config.config import Config
+from utils.test_data import TestData
 
-config = Config()
 
 @pytest.mark.parametrize("username,password,should_pass", [
-    (config.VALID_USER, config.VALID_PASSWORD, True),
+    (TestData.VALID_USER, TestData.VALID_PASSWORD, True),
     ("standard_user", "wrong_pass", False),
     ("locked_out_user", "secret_sauce", False)
 ])

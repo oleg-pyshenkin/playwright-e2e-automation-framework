@@ -1,9 +1,10 @@
-from config.config import Config
-
 class TestData:
-    BASE_URL = Config.BASE_URL  # This was causing the error
-    VALID_USER = Config.VALID_USER
-    VALID_PASSWORD = Config.VALID_PASSWORD
+    VALID_USER = "standard_user"
+    VALID_PASSWORD = "secret_sauce"
+
+    INVALID_PASSWORD = "wrong_pass"
+    LOCKED_USER = "locked_out_user"
+
     
     FIRST_NAME = "Oleg"
     LAST_NAME = "QA"
