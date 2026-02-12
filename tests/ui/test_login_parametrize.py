@@ -1,6 +1,6 @@
 import pytest
 from playwright.sync_api import expect
-from utils.test_data import TestData
+from utils.test_data.login_data import TestData
 
 
 @pytest.mark.parametrize("username,password,should_pass", [

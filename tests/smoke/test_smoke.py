@@ -1,4 +1,4 @@
-from utils.test_data import TestData  
+from utils.test_data.login_data import TestData  
 import pytest
 
 @pytest.mark.smoke
