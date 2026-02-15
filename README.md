@@ -51,7 +51,7 @@ This project demonstrates real-world automation skills including UI and API test
 - Critical user flows verification
 - Quick validation of core functionality
 
----
+----
 
 ## Running Tests
 
