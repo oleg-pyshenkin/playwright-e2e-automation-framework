@@ -1,106 +1,74 @@
-Playwright E2E Automation Framework
-Project Overview
+# Playwright Automation Framework (Python)
 
-This project is a Playwright-based end-to-end automation framework for testing a demo e-commerce website (https://www.saucedemo.com
-).
-It demonstrates a QA engineer’s skills in:
+A professional-grade test automation framework built with **Python, Playwright, and Pytest**, designed for scalable and maintainable automation projects. 
 
-UI test automation using Playwright
+This project demonstrates real-world automation skills including UI and API testing, clean code, object-oriented design, and robust test architecture.
 
-Page Object Model (POM)
+---
 
-Python OOP and clean code
+## Key Features
 
-Test data management
+- UI automation using Playwright
+- API testing using Requests
+- Page Object Model (POM) for maintainable UI tests
+- BasePage abstraction for reusable functionality
+- Pytest fixtures for setup and teardown
+- Stable selectors using `data-test` attributes
+- Clear project structure for UI, API, and smoke tests
+- Ready for integration with CI/CD pipelines
 
-Test organization with pytest
+---
 
-Project Structure
-playwright-e2e-automation-framework/
-├─ pages/                 # Page Object classes
-│  ├─ base_page.py
-│  ├─ login_page.py
-│  ├─ cart_page.py
-│  └─ checkout_page.py
-├─ tests/                 # Test scripts
-│  ├─ ui/
-│  │  ├─ test_login.py
-│  │  ├─ test_checkout.py
-│  │  └─ test_cart.py
-├─ utils/
-│  └─ test_data.py        # Test data constants
-├─ config.py              # Base URLs, valid users, passwords
-├─ pytest.ini             # Pytest configuration
-├─ requirements.txt       # Python dependencies
-└─ README.md
+## Tech Stack
 
-Setup
+| Category | Tools |
+|----------|-------|
+| Language | Python 3.13 |
+| UI Automation | Playwright |
+| Test Framework | Pytest |
+| API Testing | Requests |
+| Design Patterns | Page Object Model, OOP |
+| Version Control | Git, GitHub |
+| Operating Systems | macOS / Linux / Windows |
 
-Clone the project
+---
 
-git clone <your-repo-url>
-cd playwright-e2e-automation-framework
+## Test Scenarios Implemented
 
+### UI Tests
+- Login (positive and negative cases)
+- Product selection
+- Add and remove items from cart
+- Checkout process
+- Verification of UI elements and business logic
 
-Create a virtual environment
+### API Tests
+- Basic REST API validation
+- Response status code and body checks
+- Integration with test data layer
 
-python3 -m venv venv
-source venv/bin/activate      # Mac/Linux
-venv\Scripts\activate         # Windows
+### Smoke Tests
+- Critical user flows verification
+- Quick validation of core functionality
 
+---
 
-Install dependencies
+## Running Tests
 
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
-
-
-Install Playwright browsers
-
 playwright install
 
-Running Tests
 
-Run all UI tests
+### Running Tests
 
-pytest -v
+Run UI Tests Only
+pytest tests/ui
 
+Run API Tests Only
+pytest tests/api
 
-Run a single test file
-
-pytest tests/ui/test_login.py -v
-
-
-View screenshots
-If a test fails, screenshots are saved in the screenshots/ folder.
-
-Test Coverage
-
-Login Tests: Valid login, invalid login, locked out user
-
-Cart Tests: Add/remove items, cart badge check
-
-Checkout Tests: Fill customer info, continue, finish, verify order success
-
-API tests are not implemented in this version.
-
-Test Data
-
-Stored in utils/test_data.py:
-
-class TestData:
-    VALID_USER = "standard_user"
-    VALID_PASSWORD = "secret_sauce"
-    INVALID_PASSWORD = "wrong_password"
-    LOCKED_USER = "locked_out_user"
-    FIRST_NAME = "Oleg"
-    LAST_NAME = "QA"
-    POSTAL_CODE = "12345"
-
-Config
-
-Stored in config.py:
-
-class Config:
-    BASE_URL = "https://www.saucedemo.com/"
-    VALID_USER = "standard_user"
-    VALID_PASSWORD = "secret_sauce"
+Run Smoke Tests
+pytest tests/smoke
